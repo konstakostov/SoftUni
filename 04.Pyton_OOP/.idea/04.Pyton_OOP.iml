@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/04.02.Homework/04.Pyton_OOP_Homework/04.12.Exam_Preparation/04.12.01.Self_Preparation/2022.08.22_Retake/Skeleton" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04.Homework/04.12.Exam_Preparation/04.12.01.Self_Preparation/2022.04.18_Retake/Skeleton" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.11 (04.Pyton_OOP)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

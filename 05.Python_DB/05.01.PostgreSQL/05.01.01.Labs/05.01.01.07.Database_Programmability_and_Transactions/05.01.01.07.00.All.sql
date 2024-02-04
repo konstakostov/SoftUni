@@ -1,0 +1,131 @@
+-- -- 01.	Count Employees by Town
+-- CREATE OR REPLACE FUNCTION  fn_count_employees_by_town(town_name VARCHAR)
+-- RETURNS  INT AS
+-- $$
+--     DECLARE
+--         town_count INT;
+--     BEGIN
+--         SELECT
+--     COUNT(*)
+--     FROM
+--         employees AS e
+--     JOIN
+--         addresses AS a
+--     USING
+--         (address_id)
+--     JOIN
+--         towns AS t
+--     USING
+--         (town_id)
+--     WHERE
+--         t.name = town_name
+--     INTO
+--         town_count;
+--     RETURN
+--         town_count;
+--     END
+--     $$
+-- LANGUAGE plpgsql;
+
+
+-- -- 02.	Employees Promotion
+-- CREATE OR REPLACE PROCEDURE sp_increase_salaries(department_name VARCHAR)
+-- AS
+-- $$
+--     BEGIN
+--     UPDATE
+--         employees
+--     SET
+--         salary = salary + salary * 0.05
+--     WHERE
+--         department_id = (
+--             SELECT
+--                 d.department_id
+--             FROM
+--                 employees AS e
+--             JOIN
+--                 departments AS d
+--             USING
+--                 (department_id)
+--             WHERE
+--                 name = department_name
+--             GROUP BY
+--                 d,d.department_id
+--             );
+--     END
+--     $$
+-- LANGUAGE plpgsql;
+
+
+-- -- 03.	Employees Promotion by ID
+-- CREATE OR REPLACE PROCEDURE sp_increase_salary_by_id(id INT)
+-- AS
+-- $$
+--     BEGIN
+--         IF (SELECT
+--                 salary
+--             FROM
+--                 employees
+--             WHERE
+--                 employee_id = id)
+--             IS NULL
+--             THEN
+--                 RETURN;
+--         ELSE
+--             UPDATE
+--                 employees
+--             SET
+--                 salary = salary + salary * 0.05
+--             WHERE
+--                 employee_id = id;
+--         END IF;
+--         COMMIT;
+--     END;
+-- $$
+-- LANGUAGE plpgsql;
+
+
+-- -- 04.	Triggered
+-- DROP TABLE IF EXISTS deleted_employees;
+--
+-- CREATE TABLE deleted_employees(
+--     employee_id SERIAL PRIMARY KEY,
+--     first_name VARCHAR(20),
+--     last_name VARCHAR(20),
+--     middle_name VARCHAR(20),
+--     job_title VARCHAR(50),
+--     department_id INT,
+--     salary NUMERIC(19,4)
+-- );
+--
+-- CREATE OR REPLACE FUNCTION backup_fired_employees()
+-- RETURNS TRIGGER AS
+-- $$
+-- BEGIN
+--     INSERT INTO deleted_employees(
+--         first_name,
+--         last_name,
+--         middle_name,
+--         job_title,
+--         department_id,
+--         salary
+--     )
+--     VALUES (
+--         OLD.first_name,
+--         OLD.last_name,
+--         OLD.middle_name,
+--         OLD.job_title,
+--         OLD.department_id,
+--         OLD.salary
+--     );
+--     RETURN NEW;
+-- END;
+-- $$
+-- LANGUAGE plpgsql;
+--
+--
+-- CREATE OR REPLACE TRIGGER backup_employees
+-- AFTER DELETE ON employees
+-- FOR EACH  ROW
+-- EXECUTE PROCEDURE backup_fired_employees();
+

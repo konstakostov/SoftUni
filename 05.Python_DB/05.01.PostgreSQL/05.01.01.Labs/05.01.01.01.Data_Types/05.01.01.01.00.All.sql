@@ -1,0 +1,52 @@
+-- -- 01. Create a Database
+-- CREATE TABLE
+-- 	employees(
+-- 		id SERIAL NOT NULL PRIMARY KEY,
+-- 		first_name VARCHAR(30),
+-- 		last_name VARCHAR(50),
+-- 		hiring_date DATE DEFAULT '2023-01-01',
+-- 		salary NUMERIC(10,2),
+-- 		devices_number INTEGER
+-- 	);
+--
+-- CREATE TABLE
+-- 	departments(
+-- 		id SERIAL NOT NULL PRIMARY KEY,
+-- 		name VARCHAR(50),
+-- 		code CHAR(3),
+-- 		description TEXT
+-- 	);
+--
+-- CREATE TABLE
+-- 	issues(
+-- 		id SERIAL PRIMARY KEY UNIQUE,
+-- 		description VARCHAR(150),
+-- 		date DATE,
+-- 		start TIMESTAMP
+-- 	);
+--
+--
+-- -- 03. Rename the Table
+-- ALTER TABLE employees
+-- ADD COLUMN middle_name VARCHAR(50)
+--
+--
+-- --04. Alter the Table
+-- ALTER TABLE employees
+-- ALTER COLUMN salary SET NOT NULL,
+-- ALTER COLUMN salary SET DEFAULT 0,
+-- ALTER COLUMN hiring_date SET NOT NULL;
+--
+--
+-- -- 05. Rename Column
+-- ALTER TABLE employees
+-- ALTER COLUMN middle_name TYPE VARCHAR(100);
+--
+--
+-- -- 06. Add New Columns
+-- TRUNCATE TABLE issues;
+--
+--
+-- -- 07. Create ENUM Type
+-- DROP TABLE departments;
+--
