@@ -3,10 +3,6 @@
     margin: 0;
 }
 
-.viewport {
-    height: 100vh;
-}
-
 img {
     display: block;
     width: 100%;
@@ -17,6 +13,54 @@ img {
     max-width: 300px;
     overflow: hidden;
     border-radius: 0.4em;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*The browser automatically centers the image from top/bottom and left/right*/
+    transform: translate(-50%, -50%);
+    box-shadow: 0.5em 0.5em 1em 0.5em rgb(0 ,0, 0, 0.5);
+    border: 1px solid #ccc;
+}
+
+.card::before {
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 0.5em 0.5em rgb(0 ,0, 0, 0.7) inset;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.card:hover::before {
+    opacity: 0;
+}
+
+.viewport {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.card svg{
+    display: block;
+    width: 2em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    fill: #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
+}
+
+.card:hover svg {
+    opacity: 1;
+}
+
+.card svg:hover {
+    fill: blue;
+    transition: fill 0.3s ease-in;
 }
 
 .viewport:nth-child(1){
