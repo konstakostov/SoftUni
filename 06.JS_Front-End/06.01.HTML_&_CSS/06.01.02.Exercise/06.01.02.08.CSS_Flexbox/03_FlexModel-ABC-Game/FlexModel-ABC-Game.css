@@ -1,0 +1,36 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+}
+
+div.container {
+    display: flex;
+    align-items: center;
+    max-width: 15vw;
+    height: 35rem;
+
+    flex-direction: column;
+    gap: 0.3em;
+    flex-wrap: wrap;
+}
+
+div span {
+    border: solid 1px black;
+
+    width: 40%;
+    text-align: center;
+    padding: 0.9em;
+}
+
+#box01 { order: 9; }
+#box02 { order: 2; }
+#box03 { order: 10; }
+#box04 { order: 4; }
+#box05 { order: 8; }
+#box06 { order: 7; }
+#box07 { order: 11; }
+#box08 { order: 5; }
+#box09 { order: 6; }
+#box10 { order: 12; }
+#box11 { order: 1; }
+#box12 { order: 3; }
