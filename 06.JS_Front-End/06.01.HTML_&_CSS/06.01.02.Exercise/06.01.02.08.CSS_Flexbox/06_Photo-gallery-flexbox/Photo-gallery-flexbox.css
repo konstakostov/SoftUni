@@ -1,11 +1,13 @@
 * {
-    margin: 1em;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: lightgray;
 }
 
 body {
+    background-color: #EEEEEE;
+    padding: 2em;
+
     display: flex;
 }
 
@@ -16,26 +18,29 @@ img {
 }
 
 .gallery {
-    max-width: 90em;
+    max-width: 50em;
     margin: 0 auto;
 }
 
 .gallery ul {
-    list-style: none;
-
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.5em;
 }
 
 .gallery li {
-    border: 0.75em solid black;
-    box-shadow: 0 0 0.75em;
-    padding: 2em 0.5em;
-    background-color: whitesmoke;
+    list-style: none;
+
+    background-color: #FFFFFF;
+    border: 7px solid black;
+    padding: 0.5em;
 
     display: flex;
     align-items: center;
+    flex: 0 0 250px;
 
+    box-shadow:
+        0 0 1em 0 rgba(0, 0, 0, 0.3),
+        0 0 0.3em 0 rgba(0, 0, 0, 0.4) inset;
 }
