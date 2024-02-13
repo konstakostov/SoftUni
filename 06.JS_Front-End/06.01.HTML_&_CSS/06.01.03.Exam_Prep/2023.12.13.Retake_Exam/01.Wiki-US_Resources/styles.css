@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Agbalumo', sans-serif;
+    font-style: italic;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+}
+
+header {
+    flex: 0 0 90%;
+
+    background-color: lightcyan;
+}
+
+header .site-title{
+    text-align: center;
+    border-bottom:2px solid black;
+    font-size: 2em;
+    margin: 1em 1em 0 1em;
+}
+
+header .site-sub-title{
+    text-align: center;
+    border-bottom:2px solid black;
+    margin: 0 2em;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2em;
+
+    padding: 2em;
+
+    text-indent: 2em;
+}
+
+main aside {
+    flex: 0 0 calc(40% - 2em);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+    max-width: 40vw;
+
+    padding: 1em;
+    margin: 1em;
+}
+
+main aside img {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+
+    margin-bottom: 2em;
+}
+
+main section p{
+    flex: 0 0 60%;
+
+    margin-bottom: 2em;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+
+    background-color: lightcyan;
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .footer-title {
+    display: flex;
+    justify-content: flex-start;
+
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+
+    position: relative;
+}
+
+footer .title-background {
+    flex: 0 0 45%;
+
+    background-color: black;
+    color: white;
+    padding: 1em;
+
+    z-index: 1;
+}
+
+footer .title-background-white {
+    flex: 1; /* Take up the remaining space */
+    background-color: white;
+}
+
+
+footer .info {
+    margin: 1.5em 2em 0.5em 2em;
+}
+
+
