@@ -1,0 +1,28 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+}
+
+li {
+    list-style-type: disc;
+}
+
+img {
+    width: 480px;
+    height: 240px;
+}
+
+.content-box {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+aside {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+}
