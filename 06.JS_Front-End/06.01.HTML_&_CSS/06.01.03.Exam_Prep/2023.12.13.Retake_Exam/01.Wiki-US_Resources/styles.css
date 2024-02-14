@@ -83,7 +83,7 @@ header p {
 
     margin: 1em;
 
-    flex-basis: calc(60% - 4em);
+    flex-basis: calc(60% - 5em);
 }
 
 .article-description .description p {
