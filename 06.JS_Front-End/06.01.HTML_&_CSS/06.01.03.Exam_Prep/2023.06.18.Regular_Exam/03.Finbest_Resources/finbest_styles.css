@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 20px/1.4 "Inter", sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 5em;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5em;
+}
+
+header nav li {
+    list-style: none;
+    display: flex;
+    padding: 0.7em 2em;
+}
+
+.login-colored {
+    background-color: #ade2df;
+    border-radius: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-intro {
+    background-color: #ade2df;
+    padding-top: 7em;
+    padding-bottom: 6em;
+}
+
+.section-intro h1 {
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-intro .intro-description {
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.section-intro .download-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.section-intro .download-buttons .download-button {
+    display: flex;
+    gap: 0.5em;
+    border: 1px solid black;
+    background-color: black;
+    color: #FFFFFF;
+    padding: 1.36em 2em;
+    border-radius: 10px;
+}
+
+.section-numbers {
+    padding: 6em 11.5em;
+    display: flex;
+}
+
+.section-numbers .section-number {
+    padding: 0.75em 2em 5em 2em;
+    border-left: 2px solid #dddddd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+}
+
+.section-numbers .section-number:last-child {
+    border-right: 2px solid #dddddd;
+}
+
+.section-numbers .section-number h2 {
+    font-size: 2.5em;
+}
+
+.section-app {
+    background: #ade2df;
+    display: flex;
+    padding: 0 16em;
+    gap: 6em;
+}
+
+.section-app img {
+    border: 2px dashed  #aeafaa ;
+    align-self: center;
+    padding: 0 1em;
+}
+
+.section-app .app-description {
+    max-width: 32em;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-app .app-description h2 {
+    font-size: 2.5em;
+    padding-bottom: 1em;
+    padding-top: 2em;
+}
+
+.section-app .app-description h4 {
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+.app-description .app-description-bold {
+    margin-bottom: 1em;
+}
+
+.section-app .app-description p {
+}
+
+.app-description .app-description-normal {
+    margin-bottom: 0.5em;
+}
+
+.section-app .app-description .app-description-link {
+    color: #000000;
+    margin-top: 1em;
+    border-bottom: 1px solid #000000;
+    width: 11em;
+}
+
+.section-plans {
+    background-color: #f3f5fa;
+    padding: 3em 0 5.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+}
+
+.section-plans button {
+    background: #ade2df;
+    border: 1px solid #ade2df;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}
+
+.section-plans h2 {
+    font-size: 2.5em;
+}
+
+.section-plans-info {
+    display: flex;
+    padding: 2em;
+    border: 1px solid #aeafaa;
+    border-radius: 10px;
+}
+
+.plan-info {
+    padding: 1em 1.5em;
+    border-right: 2px solid #aeafaa;
+}
+
+.plan-info h4 {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.plan-info .plan-info-price {
+    display: flex;
+    border-bottom: 2px solid #aeafaa;
+    align-items: flex-end;
+    padding: 1em 0;
+}
+
+.plan-info .plan-info-price h2 {
+    font-size: 2.5em;
+}
+
+.plan-info .plan-info-price p {
+    padding: 0.5em;
+}
+
+.plan-info .plan-info-price ul {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.plan-info .plan-info-price li {
+    list-style-type: "\2713 ";
+}
+
+.plan-info .plan-info-get {
+    padding: 3em 2em 0 2em;
+}
+
+.plan-info .plan-info-get button {
+    padding: 1em;
+    color: #000000;
+    background: #ade2df;
+    border: 1px solid #ade2df;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.plan-expand {
+    padding: 0 3em;
+    display: flex;
+    flex-direction: column;
+    background-color: #ade2df;
+}
+
+.plan-expand h4{
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.plan-expand h2 {
+    font-size: 1.5em;
+    text-align: start;
+}
+
+.plan-expand ul {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.plan-expand li {
+    list-style-type: "\2713 ";
+}
+
+.plan-expand button {
+    margin-top: 16.5em;
+    padding:1em;
+    color: #FFFFFF;
+    background-color: black;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.section-get-started {
+    padding: 7em 30em;
+    background-color: #ade2df;
+}
+
+.section-get-started h2 {
+    text-align: center;
+    font-size: 4em;
+}
+
+.section-get-started p {
+    text-align: center;
+    font-size: 1.15em;
+}
+
+.section-get-started .download-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding-top: 3em;
+}
+
+.section-get-started .download-buttons .download-button {
+    display: flex;
+    gap: 0.5em;
+    border: 1px solid black;
+    background-color: black;
+    color: #FFFFFF;
+    padding: 1.36em 2em;
+    border-radius: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3em;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer li {
+    list-style: none outside;
+    padding: 1em;
+}
