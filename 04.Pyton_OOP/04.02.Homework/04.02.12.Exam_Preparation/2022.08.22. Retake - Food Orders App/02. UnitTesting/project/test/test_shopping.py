@@ -1,1 +1,0 @@
-from project.shopping_cart import ShoppingCart
