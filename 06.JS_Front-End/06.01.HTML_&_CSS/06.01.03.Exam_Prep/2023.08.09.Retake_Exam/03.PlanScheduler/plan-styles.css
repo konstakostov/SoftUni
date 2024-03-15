@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Inter", sans-serif ;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: #d9d9d9;
+}
+
+header ul {
+    list-style: none outside;
+    display: flex;
+}
+
+header ul li {
+    padding: 1em 2em;
+}
+
+header .buy-button {
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+    background-color: white;
+    margin: 0 3em;
+}
+
+.site-main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.site-main .welcome-section {
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3em;
+}
+
+.site-main .welcome-section h1 {
+    border: 3px solid red;
+    font-size: 3em;
+    font-weight: bold;
+
+    margin-left: 6em;
+    margin-top: 6em;
+}
+
+.site-main .welcome-section p {
+    border: 3px solid red;
+    font-size: 1.2em;
+    color: #fbfbfb;
+
+    margin-left: 15em;
+    margin-top: 3em;
+}
+
+.site-main .welcome-section button {
+    border: 3px solid red;
+    font-size: 0.75em;
+    color: #000000;
+}

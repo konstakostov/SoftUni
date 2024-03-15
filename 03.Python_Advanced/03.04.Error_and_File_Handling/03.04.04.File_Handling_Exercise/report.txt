@@ -1,0 +1,18 @@
+.html
+- - -['index.html']
+.js
+- - -['index.js']
+.pptx
+- - -['demo.pptx']
+.py
+- - -['03.04.04.00.All.py', '03.04.04.01.Even_Lines.py', '03.04.04.02.Line_Numbers.py', '03.04.04.03.File_Manipulator.py', '03.04.04.04.Directory_Traversal.py', 'python.py']
+- - -['03.04.04.00.All.py', '03.04.04.01.Even_Lines.py', '03.04.04.02.Line_Numbers.py', '03.04.04.03.File_Manipulator.py', '03.04.04.04.Directory_Traversal.py', 'python.py']
+- - -['03.04.04.00.All.py', '03.04.04.01.Even_Lines.py', '03.04.04.02.Line_Numbers.py', '03.04.04.03.File_Manipulator.py', '03.04.04.04.Directory_Traversal.py', 'python.py']
+- - -['03.04.04.00.All.py', '03.04.04.01.Even_Lines.py', '03.04.04.02.Line_Numbers.py', '03.04.04.03.File_Manipulator.py', '03.04.04.04.Directory_Traversal.py', 'python.py']
+- - -['03.04.04.00.All.py', '03.04.04.01.Even_Lines.py', '03.04.04.02.Line_Numbers.py', '03.04.04.03.File_Manipulator.py', '03.04.04.04.Directory_Traversal.py', 'python.py']
+- - -['03.04.04.00.All.py', '03.04.04.01.Even_Lines.py', '03.04.04.02.Line_Numbers.py', '03.04.04.03.File_Manipulator.py', '03.04.04.04.Directory_Traversal.py', 'python.py']
+.txt
+- - -['log.txt', 'notes.txt', 'output.txt', 'text.txt']
+- - -['log.txt', 'notes.txt', 'output.txt', 'text.txt']
+- - -['log.txt', 'notes.txt', 'output.txt', 'text.txt']
+- - -['log.txt', 'notes.txt', 'output.txt', 'text.txt']

@@ -1,0 +1,118 @@
+@media (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
+
+    header {
+        padding: 1em;
+    }
+
+    header nav {
+        margin: 0;
+        justify-content: center;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header nav li {
+        font-size: 1.2em;
+    }
+
+    .header-title {
+        padding: 1em;
+        font-size: 0.8em;
+
+    }
+
+    .header-title h1 {
+        font-size: 2.5em;
+    }
+
+    .header-title p {
+        font-size: 1.5em;
+    }
+
+    .header-title button {
+        margin: 1.5em;
+    }
+
+    .choose-us {
+        padding: 2em 0;
+    }
+    .choose-us ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .choose-us li {
+        width: 55%;
+    }
+
+    .about-us {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1.5em 0;
+        padding: 0;
+    }
+
+    .about-us h3 {
+        font-size: 1.4em;
+    }
+
+    .about-us p:first-of-type {
+        padding-bottom: 2em;
+    }
+
+    .about-us p:last-of-type {
+        text-align: center;
+        padding: 0 3em 1em 3em;
+    }
+
+    .team-description{
+        width: 100%;
+    }
+
+    .team-description h3 {
+        font-size: 1.4em;
+    }
+
+    .team-description .team-description-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 3em 11em;
+    }
+
+    .team-description .team-description-wrapper ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 1em;
+    }
+
+    .team-description .team-description-wrapper li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .team-description .team-description-wrapper li img {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,41 @@
+body {
+    font-family: Georgia, serif;
+    background: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+section {
+    /*background: rgb(255, 255, 255);*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.headings {
+    font-size: 1.2em
+}
+
+div {
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+.card .button {
+    background: rgb(0, 153, 0);
+}

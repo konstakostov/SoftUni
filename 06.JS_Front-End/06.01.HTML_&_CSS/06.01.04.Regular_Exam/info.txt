@@ -1,0 +1,6 @@
+Resolution: 1920 x 1080
+Scale: 100%
+Layout: Landscape
+
+Task 02 (Photographer Agency) has been tested on resolution 500px (Width)
+to get the results as the provided image.
