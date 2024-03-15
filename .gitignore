@@ -1,2 +1,5 @@
-*.zip
+*.7z
 *.rar
+*.zip
+*.venv
+*.idea
