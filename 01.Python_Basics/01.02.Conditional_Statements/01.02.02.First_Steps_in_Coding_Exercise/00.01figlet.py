@@ -1,3 +1,0 @@
-from pyfiglet import Figlet
-
-
