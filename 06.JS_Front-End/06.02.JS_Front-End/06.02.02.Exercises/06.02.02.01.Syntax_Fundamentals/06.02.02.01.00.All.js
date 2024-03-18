@@ -201,7 +201,7 @@ function solveFruit(fruitType, fruitWeightInGrams, pricePerKilogram) {
     let gramsToKilograms = fruitWeightInGrams / 1000
     let money = gramsToKilograms * pricePerKilogram
 
-    console.log(`I need \$${money.toFixed(2)} to buy ${gramsToKilograms.toFixed(2)} kilograms ${fruitType}.`)
+    console.log(`I need $${money.toFixed(2)} to buy ${gramsToKilograms.toFixed(2)} kilograms ${fruitType}.`)
 }
 
 solveFruit('orange', 2500, 1.80)
@@ -237,10 +237,10 @@ solveSameNumbers(1234)
 
 // 11. Road Radar
 function solveRoadRadar(speed, area) {
-    let motorwayLimit = 130;
-    let interstateLimit = 90;
-    let cityLimit = 50;
-    let residentialLimit = 20;
+    const motorwayLimit = 130;
+    const interstateLimit = 90;
+    const cityLimit = 50;
+    const residentialLimit = 20;
 
     let withinSpeedLimit = true;
     let speedLimitZone = 0;
@@ -276,8 +276,8 @@ function solveRoadRadar(speed, area) {
     if (withinSpeedLimit === true) {
         console.log(`Driving ${speed} km/h in a ${speedLimitZone} zone`)
     } else {
-        let speedDifference = speed - speedLimitZone;
-        let status = null;
+        const speedDifference = speed - speedLimitZone;
+        let status;
 
         if (speedDifference <= 20) {
             status = 'speeding';
@@ -299,7 +299,7 @@ solveRoadRadar(200, 'motorway')
 
 // 12. Cooking by Numbers
 function solveCookingByNumbers(num, ...args) {
-    let operationResult = num
+    let operationResult = Number(num)
 
     for (const operation of args) {
         switch (operation) {
