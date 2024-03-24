@@ -53,101 +53,101 @@ Falsy - false, null, undefined, NaN, 0, 0n, "" considered falsy values;
  */
 
 
-// // Console print;
-// console.log('Hello, World!')
-//
-//
-// // Console print with string concatenation
-// const pi = 3.141592653
-// console.log('The number pi is: ' + pi + '!');
-//
-//
-// // Console print with string interpolation
-// console.log(`The number pi is ${pi}`);
-//
-//
-// // toFixed number output;
-// console.log(pi.toFixed(2))
-//
-//
-// // Rounding vs toFixed;
-// console.log(pi.toFixed(5))
-// console.log(Math.round(pi))
-//
-// // Defining and Initialising Variables;
-// let a = 5;
-// let b = 10;
-//
-// console.log(a + b);
-//
-//
-// // Conditional Statements
-// if (b <= 5) {
-//     console.log("b is lower or equal to 5");
-// } else if (b<= 10) {
-//     console.log("b is lower or equal to 10");
-// } else {
-//     console.log("b higher than 10");
-// }
-//
-//
-// // Function declaration;
-// function add(first, second) {
-//     console.log(first + second);
-// }
-//
-// // Function invocation;
-// add(2, 3)
-//
-//
-// // Arithmetic Operations;
-// console.log(a + b);     // Additions;
-// console.log(a - b);     // Subtractions;
-// console.log(a * b);     // Multiplication;
-// console.log(a / b);     // Division;
-// console.log(a % b);     // Remainder;
-// console.log(a ** b);    // Exponential;
-//
-//
-// // Comparison Operations;
-// console.log(1 == '1');      //Equality; Returns True;
-// console.log(1 === '1');     //Identity; Returns False;
-// console.log(3 != '1');      //Inequality; Returns False;
-// console.log(3 !== '1');     //Strict Inequality; Returns True;
-// console.log(5 <= 5.5);      //Returns True;
-// console.log(5 <= 4);        //Returns False;
-// console.log(2 > 1.5);       //Returns True;
-// console.log(2 >= 2);        //Returns True;
-// console.log((5 > 7) ? 4 : 10)   //Ternary Operator; Returns 10;
-//
-//
-// // Switch Statement;
-// const name = 'pesho';
-// switch (name) {
-//     case 'gosho':
-//         console.log('Zrd gosho');
-//         break;
-//     case 'pesho':
-//         console.log('Maraba pesho');
-//         break;
-//     default:
-//         console.log("Koi si ti?")
-//         break;
-// }
-//
-//
-// // For Loop;
-// for (let i = 0; i < 5; i++) {
-//     console.log(i);
-// }
-//
-//
-// // While Loop;
-// let i = 4;
-// while ( i < 10) {
-//     i++;
-//     console.log(i);
-// }
+// Console print;
+console.log('Hello, World!')
+
+
+// Console print with string concatenation
+const pi = 3.141592653
+console.log('The number pi is: ' + pi + '!');
+
+
+// Console print with string interpolation
+console.log(`The number pi is ${pi}`);
+
+
+// toFixed number output;
+console.log(pi.toFixed(2))
+
+
+// Rounding vs toFixed;
+console.log(pi.toFixed(5))
+console.log(Math.round(pi))
+
+// Defining and Initialising Variables;
+let a = 5;
+let b = 10;
+
+console.log(a + b);
+
+
+// Conditional Statements
+if (b <= 5) {
+    console.log("b is lower or equal to 5");
+} else if (b<= 10) {
+    console.log("b is lower or equal to 10");
+} else {
+    console.log("b higher than 10");
+}
+
+
+// Function declaration;
+function add(first, second) {
+    console.log(first + second);
+}
+
+// Function invocation;
+add(2, 3)
+
+
+// Arithmetic Operations;
+console.log(a + b);     // Additions;
+console.log(a - b);     // Subtractions;
+console.log(a * b);     // Multiplication;
+console.log(a / b);     // Division;
+console.log(a % b);     // Remainder;
+console.log(a ** b);    // Exponential;
+
+
+// Comparison Operations;
+console.log(1 == '1');      //Equality; Returns True;
+console.log(1 === '1');     //Identity; Returns False;
+console.log(3 != '1');      //Inequality; Returns False;
+console.log(3 !== '1');     //Strict Inequality; Returns True;
+console.log(5 <= 5.5);      //Returns True;
+console.log(5 <= 4);        //Returns False;
+console.log(2 > 1.5);       //Returns True;
+console.log(2 >= 2);        //Returns True;
+console.log((5 > 7) ? 4 : 10)   //Ternary Operator; Returns 10;
+
+
+// Switch Statement;
+const name = 'pesho';
+switch (name) {
+    case 'gosho':
+        console.log('Zrd gosho');
+        break;
+    case 'pesho':
+        console.log('Maraba pesho');
+        break;
+    default:
+        console.log("Koi si ti?")
+        break;
+}
+
+
+// For Loop;
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+
+// While Loop;
+let i = 4;
+while ( i < 10) {
+    i++;
+    console.log(i);
+}
 
 // // 01. Multiply NUmber by 2
 
