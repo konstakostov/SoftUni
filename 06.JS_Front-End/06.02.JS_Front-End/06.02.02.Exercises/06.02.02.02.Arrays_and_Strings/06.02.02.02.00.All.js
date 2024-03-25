@@ -153,12 +153,51 @@ solveRevealWords(
 
 
 // 06. Moder Times of #(HashTag);
+function solveModernTimes(textAsString) {
+    let textAsArray = textAsString.split(' ');
+    const pattern = /^#[a-zA-Z]+$/;
 
+    textAsArray.forEach(word => {
+        if (pattern.test(word)) {
+            let specialWord = word.substring(1);
+
+            console.log(specialWord)
+        }
+    });
+}
+
+solveModernTimes('Nowadays everyone uses # to tag a #special word in #socialMedia');
+solveModernTimes('The symbol # is known #variously in English-speaking #regions as the #number sign');
 
 
 // 07. String Substring;
+function solveStringSubstring(wordAsString, textAsString) {
+    const mainStringLowerArray = textAsString.toLowerCase().split(' ');
+    const searchStringDefault = wordAsString.toString();
+    const searchStringLower = wordAsString.toLowerCase();
 
+
+    if (mainStringLowerArray.includes(searchStringLower)) {
+        console.log(searchStringDefault);
+        return;
+    } else {
+        console.log(`${searchStringDefault} not found!`);
+    }
+}
+
+solveStringSubstring('javascript','JavaScript is the best programming language');
+solveStringSubstring('python', 'JavaScript is the best programming language');
 
 
 // 08. Pascal-Case Splitter;
+function solvePascalCaseSplitter(wordAsString) {
+    const wordPattern = /[A-Z][a-z]*/g;
 
+    const finalArray = wordAsString.match(wordPattern);
+
+    console.log(finalArray.join(', '))
+}
+
+solvePascalCaseSplitter('SplitMeIfYouCanHaHaYouCantOrYouCan');
+solvePascalCaseSplitter('HoldTheDoor');
+solvePascalCaseSplitter('ThisIsSoAnnoyingToDo');
