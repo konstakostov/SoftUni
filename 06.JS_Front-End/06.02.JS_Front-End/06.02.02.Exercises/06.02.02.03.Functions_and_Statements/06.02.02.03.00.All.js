@@ -1,6 +1,6 @@
 // 01. Smallest of Three Numbers;
 function solveSmallestInteger(...int) {
-    let smallestInteger = Number.MAX_VALUE;
+    let smallestInteger = Number.MAX_SAFE_INTEGER;
 
     int.forEach(item => {
         if (item < smallestInteger) {
@@ -128,7 +128,7 @@ function  solvePasswordValidator(inputPassword) {
         let digitCounter = 0;
 
         for (let char of password) {
-            if (!isNaN(parseInt(char, ))) {
+            if (!isNaN(parseInt(char, 10))) {
                 digitCounter++;
             }
         }
@@ -136,16 +136,16 @@ function  solvePasswordValidator(inputPassword) {
         return digitCounter;
     }
 
-    if (isAllowedLength === true && areAllCharactersAllowed === true && areEnoughDigits === true) {
+    if (isAllowedLength && areAllCharactersAllowed && areEnoughDigits) {
         console.log(validPasswordMessage);
     } else {
-        if (isAllowedLength === false) {
+        if (!isAllowedLength) {
             console.log(notAllowedLengthMessage);
         }
-        if (areAllCharactersAllowed === false) {
+        if (!areAllCharactersAllowed) {
             console.log(notAllowedCharactersMessage);
         }
-        if (areEnoughDigits === false) {
+        if (!areEnoughDigits) {
             console.log(notEnoughDigitsMessage);
         }
     }
@@ -197,7 +197,7 @@ function solvePerfectNumber(number) {
             isPerfect = true;
         }
 
-    if (isPerfect === true) {
+    if (isPerfect) {
         console.log('We have a perfect number!');
     } else {
         console.log('It\'s not so perfect.');
