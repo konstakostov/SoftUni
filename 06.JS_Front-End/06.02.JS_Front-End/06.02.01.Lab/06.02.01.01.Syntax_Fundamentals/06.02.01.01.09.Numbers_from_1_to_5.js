@@ -1,7 +1,7 @@
-function printNumbers1To5() {
-    for (let i=1; i <= 5; i++) {
+function solve() {
+    for (let i = 1; i <= 5; i++) {
         console.log(i)
     }
 }
 
-printNumbers1To5()
+solve()

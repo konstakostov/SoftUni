@@ -1,38 +1,33 @@
-function theatrePromotions(day, age) {
-    let result;
-
-    if (0 <= age && age <= 18) {
-        if (day === 'Weekday') {
-            result = '12$';
-        } else if (day === 'Weekend') {
-            result = '15$';
-        } else if (day === 'Holiday') {
-            result = '5$';
+function solve(dayType, age) {
+    if (age >= 0 && age <= 18) {
+        if (dayType === 'Weekday') {
+            console.log("12$")
+        } else if (dayType === 'Weekend') {
+            console.log("15$")
+        } else if (dayType === 'Holiday') {
+            console.log("5$")
         }
-    } else if (18 < age && age <= 64) {
-        if (day === 'Weekday') {
-            result = '18$';
-        } else if (day === 'Weekend') {
-            result = '20$';
-        } else if (day === 'Holiday') {
-            result = '12$';
+    } else if (age > 18 && age <= 64) {
+        if (dayType === 'Weekday') {
+            console.log("18$")
+        } else if (dayType === 'Weekend') {
+            console.log("20$")
+        } else if (dayType === 'Holiday') {
+            console.log("12$")
         }
-    } else if (64 < age && age <= 122) {
-        if (day === 'Weekday') {
-            result = '12$';
-        } else if (day === 'Weekend') {
-            result = '15$';
-        } else if (day === 'Holiday') {
-            result = '10$';
+    } else if (age > 64 && age <= 122) {
+        if (dayType === 'Weekday') {
+            console.log("12$")
+        } else if (dayType === 'Weekend') {
+            console.log("15$")
+        } else if (dayType === 'Holiday') {
+            console.log("10$")
         }
     } else {
-        result = "Error!";
+        console.log('Error!')
     }
-
-    return console.log(result);
 }
 
-theatrePromotions('Weekday', 42);
-theatrePromotions('Holiday', -12);
-theatrePromotions('Holiday', 15);
-theatrePromotions('Weekday', 75);
+solve('Weekday', 42);
+solve('Holiday', -12);
+solve('Holiday', 15);

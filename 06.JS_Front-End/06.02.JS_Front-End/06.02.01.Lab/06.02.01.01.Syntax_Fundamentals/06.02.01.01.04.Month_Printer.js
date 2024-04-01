@@ -1,34 +1,32 @@
-function solve(num) {
-    if (num === 1) {
-        console.log("January")
-    } else if (num === 2) {
-        console.log("February")
-    } else if (num === 3) {
-        console.log("March")
-    } else if (num === 4) {
-        console.log("April")
-    } else if (num === 5) {
-        console.log("May")
-    } else if (num === 6) {
-        console.log("June")
-    } else if (num === 7) {
-        console.log("July")
-    } else if (num === 8) {
-        console.log("August")
-    } else if (num === 9) {
-        console.log("September")
-    } else if (num === 10) {
-        console.log("October")
-    } else if (num === 11) {
-        console.log("November")
-    } else if (num === 12) {
-        console.log("December")
+function solve(monthNumber) {
+    if (monthNumber === 1) {
+        console.log('January')
+    } else if (monthNumber === 2) {
+        console.log('February');
+    } else if (monthNumber === 3) {
+        console.log('March');
+    } else if (monthNumber === 4) {
+        console.log('April');
+    } else if (monthNumber === 5) {
+        console.log('May');
+    } else if (monthNumber === 6) {
+        console.log('June');
+    } else if (monthNumber === 7) {
+        console.log('July');
+    } else if (monthNumber === 8) {
+        console.log('August');
+    } else if (monthNumber === 9) {
+        console.log('September');
+    } else if (monthNumber === 10) {
+        console.log('October');
+    } else if (monthNumber === 11) {
+        console.log('November');
+    } else if (monthNumber === 12) {
+        console.log('December');
     } else {
-        console.log("Error!")
+        console.log('Error!');
     }
 }
 
-solve(2)
-solve(4)
-solve(13
-)
+solve(2);
+solve(13);
