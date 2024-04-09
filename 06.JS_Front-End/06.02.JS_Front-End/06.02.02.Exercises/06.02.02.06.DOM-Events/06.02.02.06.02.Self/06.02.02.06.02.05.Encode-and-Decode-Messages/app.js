@@ -31,7 +31,6 @@ function encodeAndDecodeMessages() {
             decodedMessage += String.fromCharCode(charToAscii - 1);
         }
 
-        encodeTextElement.value = decodedMessage;
-        decodeTextElement.value = '';
+        decodeTextElement.value = decodedMessage;
     })
 }

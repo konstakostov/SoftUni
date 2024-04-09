@@ -126,6 +126,9 @@ AJAX & Fetch API
 /*
 ES6 Async/Await
 
+- Returns a Promise, that can await other Promises in a way that looks synchronous;
+- Contains an Await expression; It is only valid in async function; Pauses the execution of that function; Waits for the
+Promise's resolution;
 
 */
 
