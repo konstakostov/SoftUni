@@ -38,9 +38,7 @@ function solve() {
             const buttonDone = document.createElement('button');
             buttonDone.className = 'done';
             buttonDone.textContent = 'Done';
-            buttonDone.addEventListener('click', () => {
-                buttonDoneFunctionality(buttonDone);
-            });
+            buttonDone.addEventListener('click', buttonDoneFunctionality);
 
             // Create div element & append buttons elements;
             const divButtonsElement = document.createElement('div');
@@ -65,51 +63,51 @@ function solve() {
     }
 
     function buttonEditFunctionality() {
-        const cleaningTasks = document.querySelector('article');
+        const currentTask = this.parentElement.parentElement;
 
-        const place = cleaningTasks
-            .querySelectorAll('p')[0].textContent
-            .replace('Place:', '');
-        const action = cleaningTasks
-            .querySelectorAll('p')[1].textContent
-            .replace('Action:', '');
-        const person = cleaningTasks
-            .querySelectorAll('p')[2].textContent
-            .replace('Person:', '');
+        const place = currentTask
+            .querySelector('p:nth-of-type(1)').textContent
+            .split(':')[1]
+            .trim();
+        const action = currentTask
+            .querySelector('p:nth-of-type(2)').textContent
+            .split(':')[1]
+            .trim();
+        const person = currentTask
+            .querySelector('p:nth-of-type(3)').textContent
+            .split(':')[1]
+            .trim();
+
 
         placeInput.value = place;
         actionInput.value = action;
         personInput.value = person;
 
-        cleaningTasks.parentElement.remove();
+        currentTask.remove();
     }
 
-    function buttonDoneFunctionality(button) {
-        const cleaningTasks = button.parentElement.parentElement;
-
-        const buttonsElement = cleaningTasks.querySelectorAll('button');
-        buttonsElement.forEach(button => {
-            if (button !== this) {
-                button.remove();
-            }
+    function buttonDoneFunctionality() {
+        const currentButton = this
+        const currentTask = currentButton.parentElement.parentElement;
+        const buttonsToRemove = currentTask.querySelectorAll("button")
+        buttonsToRemove.forEach(button => {
+            button.remove();
         });
 
-        // Create the delete button
-        const buttonDelete = document.createElement('button');
-        buttonDelete.className = 'delete';
-        buttonDelete.textContent = 'Delete';
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', deleteButtonFunctionality)
 
-        // Create a div element for buttons and append the delete button
-        const divButtonsElement = document.createElement('div');
-        divButtonsElement.className = 'buttons';
-        divButtonsElement.appendChild(buttonDelete);
+        const divElement = currentTask.querySelector("div");
+        divElement.appendChild(deleteButton);
 
-        // Replace the existing buttons div with the new one
-        const existingButtonsDiv = cleaningTasks.querySelector('.buttons');
-        existingButtonsDiv.replaceWith(divButtonsElement);
+        currentTask.remove();
 
-        // Move the task to the done list
-        taskDone.appendChild(cleaningTasks);
-        cleaningTasks.remove();
+        taskDone.appendChild(currentTask);
+    }
+
+    function deleteButtonFunctionality() {
+        const taskToDelete = this.parentElement.parentElement;
+        taskToDelete.remove();
     }
 }
