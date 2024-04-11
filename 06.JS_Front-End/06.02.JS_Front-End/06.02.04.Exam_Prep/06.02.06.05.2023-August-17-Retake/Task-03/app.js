@@ -1,14 +1,17 @@
-const baseURL = 'http://localhost:3030/jsonstore/gifts';
+const baseURL = 'http://localhost:3030/jsonstore/tasks'
 
-let currentPresentID = null;
+let currentWeatherID = null;
 
-const giftInput = document.getElementById('gift');
-const forInput = document.getElementById('for');
-const priceInput = document.getElementById('price');
+const locationInput = document.getElementById('location');
+const temperatureInput = document.getElementById('temperature');
+const dateInput = document.getElementById('date');
 
-const giftList = document.getElementById('gift-list');
+const listWeather = document.getElementById('list');
 
-const addButton = document.getElementById('add-present');
+const loadHistory = document.getElementById('load-history');
+loadHistory.addEventListener('click', loadHistoryFunctionality);
+
+const addButton = document.getElementById('add-weather');
 addButton.addEventListener('click', async () => {
     // Create POST request;
     const response = await fetch(baseURL, {
@@ -17,9 +20,9 @@ addButton.addEventListener('click', async () => {
             'content-type': 'application/json',
         },
         body: JSON.stringify({
-            gift: giftInput.value,
-            for: forInput.value,
-            price: priceInput.value,
+            location: locationInput.value,
+            temperature: temperatureInput.value,
+            date: dateInput.value,
         }),
     });
 
@@ -31,22 +34,22 @@ addButton.addEventListener('click', async () => {
     // Clear input fields;
     clearInputFields();
 
-    await loadPresentsFunctionality();
+    await loadHistoryFunctionality();
 })
 
-const editButton = document.getElementById('edit-present');
+const editButton = document.getElementById('edit-weather');
 editButton.addEventListener('click', async () => {
     // Make PUT request;
-    const response = await fetch(`${baseURL}/${currentPresentID}`, {
+    const response = await fetch(`${baseURL}/${currentWeatherID}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
         },
         body: JSON.stringify({
-            gift: giftInput.value,
-            for: forInput.value,
-            price: priceInput.value,
-            _id: currentPresentID,
+            location: locationInput.value,
+            temperature: temperatureInput.value,
+            date: dateInput.value,
+            _id: currentWeatherID,
         })
     });
 
@@ -54,9 +57,6 @@ editButton.addEventListener('click', async () => {
     if (!response.ok) {
         return;
     }
-
-    // Load Meals;
-    await loadPresentsFunctionality();
 
     // Deactivate editButton;
     editButton.disabled = true;
@@ -69,21 +69,21 @@ editButton.addEventListener('click', async () => {
 
     // Clear currentMealID;
     currentPresentID = null;
+
+    // Load Meals;
+    await loadHistoryFunctionality();
 })
 
-const loadPresents = document.getElementById('load-presents');
-loadPresents.addEventListener('click', loadPresentsFunctionality);
-
-async function loadPresentsFunctionality() {
-    // Fetch all presents;
+async function loadHistoryFunctionality() {
+    // Fetch all records;
     const response = await fetch(baseURL);
     const data = await response.json();
 
     // Clear giftList element;
-    giftList.innerHTML = '';
+    listWeather.innerHTML = '';
 
-    // Create a gift element for every object in data;
-    for (const present of Object.values(data)) {
+    // Create a weather element for every object in data;
+    for (const weather of Object.values(data)) {
         // changeButton;
         const changeButton = document.createElement('button');
         changeButton.classList.add('change-btn');
@@ -101,44 +101,40 @@ async function loadPresentsFunctionality() {
         buttonsContainer.appendChild(deleteButton);
 
         // pGift;
-        const pGift = document.createElement('p');
-        pGift.textContent = present.gift;
+        const h2Location = document.createElement('p');
+        h2Location.textContent = weather.location;
 
         // pFor;
-        const pFor = document.createElement('p');
-        pFor.textContent = present.for;
+        const h3Date = document.createElement('p');
+        h3Date.textContent = weather.date;
 
         // pPrice;
-        const pPrice = document.createElement('p');
-        pPrice.textContent = present.price;
+        const h3Temperature = document.createElement('p');
+        h3Temperature.textContent = weather.temperature;
+        h3Temperature.id = 'celsius';
 
-        // contentContainer & Append p elements;
-        const contentContainer = document.createElement('div');
-        contentContainer.classList.add('content');
-        contentContainer.appendChild(pGift);
-        contentContainer.appendChild(pFor);
-        contentContainer.appendChild(pPrice);
+        const weatherContainer = document.createElement('div');
+        weatherContainer.classList.add('container');
+        weatherContainer.appendChild(h2Location);
+        weatherContainer.appendChild(h3Date);
+        weatherContainer.appendChild(h3Temperature);
+        weatherContainer.appendChild(buttonsContainer);
 
-        // giftSock & Append contentContainer and buttonsContainer;
-        const giftSock = document.createElement('div');
-        giftSock.classList.add('gift-sock');
-        giftSock.appendChild(contentContainer);
-        giftSock.appendChild(buttonsContainer);
-
-        // Append giftSock to giftList;
-        giftList.appendChild(giftSock)
+        // Append weatherContainer to listWeather;
+        listWeather.appendChild(weatherContainer);
 
         // Deactivate editButton;
         editButton.disabled = true;
 
         // changeButton addEventListener;
         changeButton.addEventListener('click', () => {
-            currentPresentID = present._id;
+            // Get current weather ID;
+            currentWeatherID = weather._id;
 
             // Get presents data & Populate input fields;
-            giftInput.value = present.gift;
-            forInput.value = present.for;
-            priceInput.value = present.price;
+            locationInput.value = weather.location;
+            temperatureInput.value = weather.temperature;
+            dateInput.value = weather.date;
 
             // Activate editButton;
             editButton.disabled = false;
@@ -147,13 +143,13 @@ async function loadPresentsFunctionality() {
             addButton.disabled = true;
 
             // Remove giftSock from mealList;
-            giftSock.remove();
+            weatherContainer.remove();
         })
 
         // deleteButton addEventListener;
         deleteButton.addEventListener('click', async () => {
             // Create DELETE request;
-            await fetch(`${baseURL}/${present._id}`, {
+            await fetch(`${baseURL}/${weather._id}`, {
                 method: 'DELETE',
             })
 
@@ -163,13 +159,13 @@ async function loadPresentsFunctionality() {
             }
 
             // Remove giftSock from mealList;
-            giftSock.remove();
+            weatherContainer.remove();
         })
     }
 }
 
 function clearInputFields() {
-    giftInput.value = '';
-    forInput.value = '';
-    priceInput.value = '';
+    locationInput.value = '';
+    temperatureInput.value = '';
+    dateInput.value = '';
 }
