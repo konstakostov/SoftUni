@@ -2,8 +2,13 @@ function solve(inputData) {
     const horsesInput = inputData.splice(0, 1)[0];
     let horses = horsesInput.split('|');
 
+    const lastHorseIndex = horses.length - 1;
+
     for (const line of inputData) {
-        if (line === 'Finish') {
+        if (line.trim() === 'Finish') {
+            console.log(horses.join('->'))
+            console.log(`The winner is: ${horses[lastHorseIndex]}`);
+
             break;
         } else if (line.startsWith('Retake')) {
             const [, overtaking, overtaken] = line.split(' ');
@@ -50,20 +55,14 @@ function solve(inputData) {
             }
 
             console.log(`${name} rages 2 positions ahead.`)
-        } else if (line === 'Miracle') {
+        } else if (line.trim() === 'Miracle') {
             const miracleHorse = horses.shift();
             horses.push(miracleHorse);
 
             console.log(`What a miracle - ${miracleHorse} becomes first.`)
         }
     }
-
-    const lastHorseIndex = horses.length - 1;
-
-    console.log(horses.join('->'))
-    console.log(`The winner is: ${horses[lastHorseIndex]}`);
 }
-
 
 // Left                    -> Right
 // Last                    -> First
@@ -100,3 +99,4 @@ solve(([
     'Finish',
     'Rage Lilly'
 ]));
+
