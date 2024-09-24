@@ -38,8 +38,8 @@ Step 08: Set up PostgreSQL in settings.py:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DB NAME',
-        'USER': 'charlie',
+        'NAME': 'DB_NAME',
+        'USER': 'user',
         'PASSWORD': 'password',
         'HOST': '127.0.0.1',
         'PORT': '5432',
