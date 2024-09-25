@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c2v!)&dr_)v*$%3vz^ji&(b9spwzmsmwy^_u4oh0_@!gh#^qt#'
+SECRET_KEY = 'django-insecure-rx^jcigj@9yvr0x+n0h5l3xuaj94pf-mo^$jv33sw!(560)_5l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+MY_APPS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'petstagram.accounts.apps.AccountsConfig',
+    'petstagram.common.apps.CommonConfig',
+    'petstagram.pets.apps.PetsConfig',
+    'petstagram.photos.apps.PhotosConfig'
+] + MY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,6 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+STATICFILES_DIRS = (
+    BASE_DIR / 'static'
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
