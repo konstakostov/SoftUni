@@ -37,17 +37,17 @@ def dashboard(request):
             {
                 'title': 'How to create a Django Project - Version 01',
                 'author': 'Bob Johnson',
-                'content': 'I really don\'t know how to use the Django Framework',
+                'content': 'I **really** don\'t know how to use the Django Framework',
                 'created_at': datetime.now(),
             },
             {
                 'title': 'How to create a Django Project - Version 02',
                 'author': 'Don Johnson',
-                'content': 'I really don\'t know what us Django',
+                'content': '#### I really don\'t know what is Django',
                 'created_at': datetime.now(),
             },
             {
-                'title': 'How to create a Django Project - Version 02',
+                'title': 'How to create a Django Project - Version 03',
                 'author': 'Ron Johnson',
                 'content': 'I really don\'t.',
                 'created_at': datetime.now(),
