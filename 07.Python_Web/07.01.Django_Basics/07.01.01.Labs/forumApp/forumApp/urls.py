@@ -18,10 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from forumApp.posts.views import dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('forumApp.posts.urls')),
-    path('dashboard/', dashboard, name='dash'),
+    path('', include('forumApp.posts.urls'))
 ]

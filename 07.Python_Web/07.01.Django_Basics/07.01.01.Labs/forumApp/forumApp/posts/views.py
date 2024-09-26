@@ -1,58 +1,123 @@
 from datetime import datetime
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+from forumApp.posts.forms import PostBaseForm, PostCreateForm, PostDeleteForm, SearchForm
+from forumApp.posts.models import Post
+
+
 def index(request):
     context = {
-        'current_time': datetime.now(),
-        'person': {
-            'name': 'Damien',
-            'age': 42,
-            'occupation': 'Unknown',
-        },
-        'ids': [
-            '6851268543',
-            'aosjdkadsd',
-            '46a8sd53ds',
-        ],
-        'some_text': 'this text is going to be used to display some of the Filters in the Django Template Language (DTL)',
-        'empty_text': '',
-        'users': [
-            'Pesho',
-            'Ivan',
-            'Stamat',
-            'Maria',
-            'Magdalena'
-        ]
+        "my_form": "",
     }
 
     return render(request, 'base.html', context)
 
 
 def dashboard(request):
+    form = SearchForm(request.GET)
+    posts = Post.objects.all()
+
+    if request.method == "GET":
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            posts = posts.filter(title__icontains=query)
+
     context = {
-        'posts': [
-            {
-                'title': 'How to create a Django Project - Version 01',
-                'author': 'Bob Johnson',
-                'content': 'I **really** don\'t know how to use the Django Framework',
-                'created_at': datetime.now(),
-            },
-            {
-                'title': 'How to create a Django Project - Version 02',
-                'author': 'Don Johnson',
-                'content': '#### I really don\'t know what is Django',
-                'created_at': datetime.now(),
-            },
-            {
-                'title': 'How to create a Django Project - Version 03',
-                'author': 'Ron Johnson',
-                'content': 'I really don\'t.',
-                'created_at': datetime.now(),
-            },
-        ]
+        "posts": posts,
+        "form": form,
     }
 
     return render(request, 'posts/dashboard.html', context)
+
+
+def add_post(request):
+    form = PostCreateForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('dash')
+
+    context = {
+        "form": form,
+    }
+
+    return render(request, 'posts/add-post.html', context)
+
+
+def edit_post(request, pk: int):
+    return HttpResponse()  # TODO: fix it
+
+
+def details_page(request, pk: int):
+    post = Post.objects.get(pk=pk)
+
+    context = {
+        "post": post,
+    }
+
+    return render(request, 'posts/details-post.html', context)
+
+
+def delete_post(request, pk: int):
+    post = Post.objects.get(pk=pk)
+    form = PostDeleteForm(instance=post)
+
+    if request.method == "POST":
+        post.delete()
+        return redirect('dash')
+
+    context = {
+        "form": form,
+        "post": post,
+    }
+
+    return render(request, 'posts/delete-template.html', context)
+
+# # Old index()
+#
+# def index(request):
+#     form = PersonForm(request.POST or None)
+#
+#     if request.method == "POST":
+#         print(request.POST['person_name'])
+#
+#     if form.is_valid():
+#         print(form.cleaned_data['person_name'])
+#
+#     context = {
+#         "my_form": form
+#     }
+#
+#     return render(request, 'base.html', context)
+#
+#
+#
+#
+# def index(request):
+#     context = {
+#         'current_time': datetime.now(),
+#         'person': {
+#             'name': 'Damien',
+#             'age': 42,
+#             'occupation': 'Unknown',
+#         },
+#         'ids': [
+#             '6851268543',
+#             'aosjdkadsd',
+#             '46a8sd53ds',
+#         ],
+#         'some_text': 'this text is going to be used to display some of the Filters in the Django Template Language (DTL)',
+#         'empty_text': '',
+#         'users': [
+#             'Pesho',
+#             'Ivan',
+#             'Stamat',
+#             'Maria',
+#             'Magdalena'
+#         ]
+#     }
+#
+#     return render(request, 'base.html', context)
