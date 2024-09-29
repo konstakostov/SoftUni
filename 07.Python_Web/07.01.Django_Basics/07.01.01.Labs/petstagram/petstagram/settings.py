@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rx^jcigj@9yvr0x+n0h5l3xuaj94pf-mo^$jv33sw!(560)_5l'
+SECRET_KEY = 'django-insecure-dqba4=vu@@7-x+8#^)(sd$a+y1$bkk^z=lz7t3s^c^#byy2__)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'petstagram.accounts.apps.AccountsConfig',
-    'petstagram.common.apps.CommonConfig',
+    'petstagram.photos.apps.PhotosConfig',
     'petstagram.pets.apps.PetsConfig',
-    'petstagram.photos.apps.PhotosConfig'
+    'petstagram.accounts.apps.AccountsConfig',
+    'petstagram.common.apps.CommonConfig'
 ] + MY_APPS
 
 MIDDLEWARE = [
@@ -122,7 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
 
 STATICFILES_DIRS = (
     BASE_DIR / 'static'

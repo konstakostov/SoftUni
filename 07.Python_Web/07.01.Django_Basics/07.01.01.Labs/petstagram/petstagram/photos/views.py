@@ -6,7 +6,8 @@ def photo_add_page(request):
 
 
 def photo_details_page(request):
-    return render(request, 'photos/photo-edit-page.html')
+    return render(request, 'photos/photo-details-page.html')
+
 
 def photo_edit_page(request):
     return render(request, 'photos/photo-edit-page.html')
