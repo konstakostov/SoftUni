@@ -1,14 +1,14 @@
 .search-bar {
-    width: 100%;
-    height: 52px;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar {
-    background-color: #05043e;
+  background-color: #05043e;
 }
 
 .search-bar div {
@@ -23,7 +23,7 @@
 }
 
 .search-bar input:focus {
-    outline: none;
+  outline: none;
 }
 
 .search-bar div input[type="text"] {
@@ -35,5 +35,5 @@
 }
 
 .ai-search {
-    color: white;
+  color: white;
 }

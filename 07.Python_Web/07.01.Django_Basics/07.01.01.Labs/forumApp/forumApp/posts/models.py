@@ -12,8 +12,7 @@ class Post(models.Model):
     content = models.TextField(
         validators=(
             BadLanguageValidator(),
-        ),
-        default='',
+        )
     )
 
     author = models.CharField(
@@ -29,3 +28,4 @@ class Post(models.Model):
         choices=LanguageChoice.choices,
         default=LanguageChoice.OTHER,
     )
+

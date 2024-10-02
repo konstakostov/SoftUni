@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8nk8&a%$h7t-!sx7yndn8e4hqi7&!(t1)aq*s97!*o!@d*e2()'
+SECRET_KEY = 'django-insecure-dzs&ui!mua2=f8&v@vw2&*$r12+957txws(jcjlidi-erw26ue'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,10 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-MY_APPS = [
-    'forumApp.posts'
-]
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + MY_APPS
+    "forumApp.posts"
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,7 +120,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    BASE_DIR / 'static',
+    BASE_DIR / 'staticfiles',
 )
 
 # Default primary key field type

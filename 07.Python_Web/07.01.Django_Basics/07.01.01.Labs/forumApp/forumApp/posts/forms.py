@@ -39,37 +39,21 @@ class SearchForm(forms.Form):
     )
 
 
-# class PersonForm(forms.Form):
-#     STATUS_CHOICE = (
-#         (1, 'Draft'),
-#         (2, 'Published'),
-#         (3, 'Archived'),
+# class PostForm(forms.Form):
+#     title = forms.CharField(
+#         max_length=100,
 #     )
 #
-#     date = forms.DateField()
-#
-#     person_name = forms.CharField(
-#         widget=forms.TextInput(attrs={'placeholder': 'Enter your name here'}),
-#         label="Add person name, please",
-#         error_messages={
-#             'required': 'Please, enter a valid value',
-#         },
-#         # initial="Name",
-#         # max_length=10,
+#     content = forms.CharField(
+#         widget=forms.Textarea,
 #     )
 #
-#     age = forms.IntegerField()
+#     author = forms.CharField(
+#         max_length=30,
+#     )
 #
-#     # status = forms.IntegerField(
-#     #     widget=forms.Select(choices=STATUS_CHOICE),
-#     # )
-#     #
-#     # status = forms.ChoiceField(
-#     #     widget=forms.RadioSelect,
-#     #     choices=STATUS_CHOICE,
-#     # )
-#     #
-#     status = forms.MultipleChoiceField(
-#         widget=forms.CheckboxSelectMultiple,
-#         choices=STATUS_CHOICE,
+#     created_at = forms.DateTimeField()
+#
+#     languages = forms.ChoiceField(
+#         choices=LanguageChoice.choices
 #     )

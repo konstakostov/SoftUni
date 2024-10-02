@@ -32,7 +32,7 @@
                 <p>{{ post.content|markdown }}</p>  
             {% endif %}  
             <div class="post-meta">  
-                <span>Posted by {{ post.author|default:"Anonymous" }} on {{ post.created_at|date:"d-M-Y" }}</span>  
+                <span>Posted by {{ post.author|default:"anonymous" }} on {{ post.created_at|date:"d-M-Y" }}</span>  
             </div>  
         </div>  
     </div>

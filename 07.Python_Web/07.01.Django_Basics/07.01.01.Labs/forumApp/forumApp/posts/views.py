@@ -76,6 +76,8 @@ def delete_post(request, pk: int):
 
     return render(request, 'posts/delete-template.html', context)
 
+
+
 # # Old index()
 #
 # def index(request):
