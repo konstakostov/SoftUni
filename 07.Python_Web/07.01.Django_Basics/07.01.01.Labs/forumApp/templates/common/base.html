@@ -1,4 +1,6 @@
 {% load static %}
+{% load current_time %}
+{% load user_info %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +20,17 @@
 </head>
 <body>
     {% include 'common/nav.html' %}
+    <p>
+        Last Refresh: {% current_time %}
+    </p>
+    
     {% block content %}
         Demonstrates the inheritance of block content.
     {% endblock %}
+    
+    <div>
+        {% user_info request.user %}
+    </div>
 </body>
     <script src='https://unpkg.com/akar-icons-fonts'></script>
 </html>

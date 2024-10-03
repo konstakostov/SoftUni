@@ -1,7 +1,14 @@
 {%  extends 'common/base.html' %}
+{% load uppercase %}
 
 {% block content %}
-    <h1 style="color: #405cf5">
-        Hello, user!
-    </h1>
+    {% uppercase %}
+        <h1 style="color: #405cf5">
+            Hello, user!
+        </h1>
+        
+        <h2>
+            Welcome to the forumApp!
+        </h2>
+    {% enduppercase %}
 {% endblock %}
