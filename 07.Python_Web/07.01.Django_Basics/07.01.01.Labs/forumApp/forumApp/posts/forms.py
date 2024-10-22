@@ -2,12 +2,14 @@ from filecmp import clear_cache
 from importlib.metadata import requires
 from importlib.resources import contents
 
+from crispy_forms.helper import FormHelper
 from django import forms
 from django.core.exceptions import ValidationError
+from django.forms import formset_factory
 from django.template.defaultfilters import title
 
 from forumApp.posts.mixins import DisableFieldsMixin
-from forumApp.posts.models import Post
+from forumApp.posts.models import Post, Comment
 
 
 class PostAuthorForm(forms.ModelForm):
@@ -86,6 +88,45 @@ class SearchForm(forms.Form):
             }
         )
     )
+    
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #
+    #     self.helper = FormHelper()
+    #     self.helper.form_method = 'get'
+    #     self.helper.form_class = 'form_inline'
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('author', 'content')
+
+        labels = {
+            'author': {
+                'required': "Author name is required!",
+            },
+            'content': {
+                'required': "Content is required!"
+            },
+        }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['author'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Your name',
+        })
+
+        self.fields['content'].widget.attrs.update({
+            'class': 'form-control',
+            'placeholder': 'Add message...',
+        })
+
+
+CommentFormSet = formset_factory(CommentForm, extra=1)
 
 
 # class PostForm(forms.Form):

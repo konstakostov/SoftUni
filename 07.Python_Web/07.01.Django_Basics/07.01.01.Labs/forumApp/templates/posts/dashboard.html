@@ -16,7 +16,7 @@
                         {% if not post.content %}
                             {% lorem 3 p %}
                         {% else %}
-                            {{ post.content|markdown:"This is my custom param" }}
+                            {{ post.content|markdown}}
                         {% endif %}
 
                         <div class="post-meta">
