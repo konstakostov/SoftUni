@@ -4,7 +4,6 @@ from django.utils.deconstruct import deconstructible
 
 @deconstructible
 class BadLanguageValidator:
-
     def __init__(self, bad_words=None):
         if bad_words is None:
             self.bad_words = ["bad_word1", "bad_word2", "bad_word3"]

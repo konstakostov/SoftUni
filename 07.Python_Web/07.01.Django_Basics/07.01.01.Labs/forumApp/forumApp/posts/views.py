@@ -1,4 +1,7 @@
+from dataclasses import fields
 from datetime import datetime
+
+from django.forms import modelformset_factory
 from django.http import HttpResponse
 from forumApp.posts.forms import PostBaseForm
 
@@ -8,8 +11,16 @@ from forumApp.posts.models import Post
 
 
 def index(request):
+    post_form = modelformset_factory(
+        Post,
+        fields=('title', 'content', 'author', 'languages'),
+        error_messages={
+            'title': "Title is required!",
+        }
+    )
+
     context = {
-        "my_form": "",
+        "my_form": post_form(request.POST),
     }
 
     return render(request, 'common/index.html', context)
